@@ -57,6 +57,15 @@ print(f'utcnow.tzinfo: {utcnow.tzinfo}')
 print(f'now.weekday(): {now.weekday()}')
 
 # duration
+"""
+On windows, the following statement report the error:
+ModuleNotFoundError: No module named 'tzdata'
+
+pip install pytz --upgrade
+pip install tzdata --upgrade
+
+these pip commands solved the problem.
+"""
 f_bday = datetime(1975, 12, 29, 12, 50, tzinfo=ZoneInfo('Europe/Rome'))
 h_bday = datetime(1981, 10, 7, 15, 30, 50, tzinfo=timezone(timedelta(hours=2)))
 diff = h_bday - f_bday
